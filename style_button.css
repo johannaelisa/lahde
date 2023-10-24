@@ -1,0 +1,15 @@
+#button-group {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap !important;
+    justify-content: space-around !important;
+}
+
+@media (min-width: 576px) {
+    #button-group {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap !important;
+        justify-content: space-around !important;
+    }
+}

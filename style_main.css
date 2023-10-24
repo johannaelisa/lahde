@@ -1,0 +1,159 @@
+html, body {
+    margin: 6px;
+    padding: 0;
+    background-color: #E3E3DD;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #E3E3DD!important;
+    border-radius: 5px;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: baseline;
+    background-color: #E3E3DD !important;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 5px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column !important;
+    padding-top: 20px;
+    background-color: #E3E3DD !important;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+@media (max-width: 767px) {
+    .content-container {
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+        border-radius: 5px;
+        background-color: #E3E3DD !important;
+        min-height: 100vh;
+    }
+
+    .container .content-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 5px 20px;
+    }
+
+    .container .content-container #event-list {
+        margin: 0;
+        padding: 0;
+        background-color: #E3E3DD!important;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+
+    .container .content-container #event-list #mainEventCard{
+        display: flex;
+        flex-direction: column;
+        margin: 10px 0; /*Välit*/
+        padding: 20px 40px; /*Tämä*/
+    }
+
+    .container .content-container #event-list #mainEventCard .img {
+        display: flex;
+        flex-direction: column;
+        padding: 0 30px;
+        max-width: 100% !important;
+        min-width: 50% !important;
+    }
+
+} 
+
+@media (min-width: 768px) {
+    .content-container {
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+        border-radius: 5px;
+        background-color: #E3E3DD !important;
+        min-height: 100vh;
+    }
+
+    .container .content-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 5px 20px;
+    }
+
+    .container .content-container #event-list {
+        margin: 0;
+        padding: 0;
+        background-color: #E3E3DD !important;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+
+    .container .content-container #event-list #mainEventCard{
+        display: flex;
+        flex-direction: column;
+        margin: 10px 0; /*Välit*/
+        padding: 20px 40px; /*Tämä*/
+    }
+
+    .container .content-container #event-list #mainEventCard .img {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        max-width: 100% !important;
+        min-width: 50% !important;
+    }
+} 
+
+@media (min-width: 992px) {
+    .container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 70px;
+}
+    .content-container {
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+        border-radius: 5px;
+        min-height: 100vh;
+    }
+
+    .container .content-container #event-list #mainEventCard .img {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        max-width: 100% !important;
+    }
+
+} 
+
+@media (min-width: 1200px) {
+    .container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 150px;
+}
+    .content-container  {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+} 
+
+
+
+
+
+

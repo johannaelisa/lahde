@@ -1,0 +1,73 @@
+.signup_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 60px;
+    padding-bottom: 50px;
+    /*background-color:black !important;*/
+    background-image: url('kuvat/act.webp'); /* Korvaa 'polku/kuva.jpg' kuvan polulla */
+    background-size: cover; /* Säätää kuvan koon elementin kokoiseksi */
+    background-repeat: no-repeat; /* Estää kuvan toistamisen */
+}
+.signup_container .form_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: min(10px, 100px);
+    padding-top: 40px;
+    border-radius: 7px;
+    background-color: #cdb332;
+}
+
+.signup_container .form_content .sm-6 {
+    padding: 20px;
+}
+
+
+@media (min-width: 576px) {
+    .signup_container .form_content .sm-6  {
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .signup_container .form_content .sm-6  {
+      padding-left: 70px;
+      padding-right: 70px;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .signup_container .form_content .sm-6  {
+      padding-left: 100px;
+      padding-right: 100px;
+    }
+  }
+
+.col-g-3 {
+    padding-top: 20px;
+}
+
+.alert-danger {
+    color: #721c24; /* Punainen tekstin väri */
+    background-color: #f8d7da; /* Punainen taustaväri */
+    border: 1px solid #f5c6cb; /* Punainen reunus */
+    border-radius: 4px; /* Pyöristä kulmat */
+    padding: 10px; /* Lisää tilaa virheilmoituksen ympärille */
+    margin-bottom: 15px; /* Lisää tilaa virheilmoituksen ja seuraavan kentän väliin */
+}
+
+button {
+    padding: 10px;
+    border-radius: 3px;
+    border-color: #cdb332;
+    background-color: white;
+    border-radius: 5px !important;
+}
+
+button:hover {
+    background-color: #cdb332;
+    color: white;
+}
+  
