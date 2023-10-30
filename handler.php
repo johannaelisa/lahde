@@ -138,7 +138,7 @@ if (isset($_POST['login'])) {
         $hashedPassword = $row['password'];
         $preparedPassword = $salt . $password;
         if (password_verify($preparedPassword, $hashedPassword)) {
-            session_start();
+            #session_start();
             $_SESSION['user_id'] = $row['user_id'];
             $_SESSION['organizer'] = $row['organizer'];
             $_SESSION['role'] = $row['role'];
