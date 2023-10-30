@@ -88,7 +88,7 @@ if (isset($_POST['signUpFrom'], $_POST['accept_decline'])) {
         $stmt = $conn->prepare($query2);
         $stmt->bind_param("ssss", $email, $signup_token, $status, $expiration_time);
         if ($stmt->execute()) {
-            $confirmationLink = "http://localhost/php/lahde/signup_verification.php?signup_token=$signup_token&email=" . urlencode($email);
+            $confirmationLink = "https://kinnarijo.azurewebsites.net/signup_verification.php?signup_token=$signup_token&email=" . urlencode($email);
             $emailTo = $email;
             $msg = "Kiitos rekisteröitymisestäsi. Vahvista sähköpostiosoitteesi klikkaamalla alla olevaa linkkiä:\n\n";
             $msg.= "<a href='$confirmationLink'>$confirmationLink</a>";
