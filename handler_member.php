@@ -3,8 +3,6 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 require_once("connect.php");
 
-
-
 if (isset($_POST['submit_event'])) {
     $fields_to_check = ["name", "primary_category", "accept_decline" ];
     $errors = [];
@@ -53,13 +51,10 @@ if (isset($_POST['submit_event'], $_POST['accept_decline'])) {
     $hour = $_POST['hourSelect'];
     $minute = $_POST['minuteSelect'];
     $time_start = $hour . ":" . $minute. ":00" ;
-    echo $time_start;
     
     $description = $conn->real_escape_string(strip_tags($_POST['description']));
 
-    echo $description;
     $primary_category = $_POST['primary_category'];
-    echo $primary_category;
 
     $selectedValues = [];
 
@@ -100,7 +95,6 @@ if (isset($_POST['submit_event'], $_POST['accept_decline'])) {
     }
 
     $category = implode(',', $selectedValues);
-    echo $category;
 
     $query = "INSERT INTO eventdb (name, organizer, day, time_start, primary_category, category, description)
             VALUES ('$name', '$organizer', '$day', '$time_start', '$primary_category', '$category', '$description')";

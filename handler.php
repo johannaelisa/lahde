@@ -6,7 +6,6 @@ if (isset($_POST['signUpFrom'])) {
     $fields_to_check = ["organizer", "businessid", "phone", "email", "password1", "password2", "accept_decline" ];
     $errors = [];
     foreach ($fields_to_check as $field) {
-        #session_start();
         $value = isset($_POST[$field]) ? $_POST[$field] : '';
         $cleanedValue = trim($value);
         switch ($field) {  
@@ -66,6 +65,7 @@ if (isset($_POST['signUpFrom'])) {
 }
 
 if (isset($_POST['signUpFrom'], $_POST['accept_decline'])) {
+    session_destroy();
     require_once("connect.php");
     require("mail.php");
     $organizer = $conn->real_escape_string(strip_tags($_POST['organizer']));
@@ -134,14 +134,17 @@ if (isset($_POST['login'])) {
     $result = $conn->query($query);
     if ($result->num_rows == 1) {
         $row = $result->fetch_assoc();
+        $id = $row['ID'];
+        $organizer = $row['organizer'];
+        $role = $row['role'];
         $salt = $row['salt'];
         $hashedPassword = $row['password'];
         $preparedPassword = $salt . $password;
         if (password_verify($preparedPassword, $hashedPassword)) {
-            #session_start();
-            $_SESSION['user_id'] = $row['ID'];
-            $_SESSION['organizer'] = $row['organizer'];
-            $_SESSION['role'] = $row['role'];
+            session_start();
+            $_SESSION['user_id'] = $id;
+            $_SESSION['organizer'] = $organizer;
+            $_SESSION['role'] = $role;
             if (isset($_POST['remember_me'])) {
                 $remember_token = bin2hex(random_bytes(32));
                 $query2 = "INSERT INTO remember_tokens (user_id, token) VALUES (?, ?)";
