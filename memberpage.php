@@ -5,7 +5,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 #$user_id = $_SESSION['user_id'];
-$organizer = $_SESSION['organizer'];
+$organizer = $organizer ?? $_SESSION['organizer'];
 #$role = $_SESSION['role'];
 ?>
 
