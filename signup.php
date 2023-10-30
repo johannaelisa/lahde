@@ -93,8 +93,6 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         }
     }
-
-
     setErrorMessage("organizer", "<?php echo !empty($errors['organizer']) ? $errors['organizer'] : ''; ?>");
     setErrorMessage("businessid", "<?php echo !empty($errors['businessid']) ? $errors['businessid'] : ''; ?>");
     setErrorMessage("phone", "<?php echo !empty($errors['phone']) ? $errors['phone'] : ''; ?>");

@@ -16,7 +16,7 @@
   <link rel="stylesheet" type="text/css" href="style_checkbox.css">
   <link rel="stylesheet" type="text/css" href="style_memberpage.css">
   <link rel="stylesheet" type="text/css" href="style_login.css">
-    <link rel="stylesheet" type="text/css" href="style_signup.css">
+  <link rel="stylesheet" type="text/css" href="style_signup.css">
   <link rel="stylesheet" type="text/css" href="style_hero.css">
   <title><?= $title ?? 'Lähde'; ?></title>
 </head>

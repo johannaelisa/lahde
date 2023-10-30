@@ -1,20 +1,15 @@
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-require("mail.php");
-require_once("connect.php");
-
 
 if (isset($_POST['signUpFrom'])) {
     $fields_to_check = ["organizer", "businessid", "phone", "email", "password1", "password2", "accept_decline" ];
     $errors = [];
-
     foreach ($fields_to_check as $field) {
         session_start();
         $value = isset($_POST[$field]) ? $_POST[$field] : '';
         $cleanedValue = trim($value);
-        switch ($field) {
-            
+        switch ($field) {  
             case "organizer":
                 if (empty($cleanedValue)) {
                     $errors[$field] = "Nimi vaaditaan.";
@@ -71,16 +66,16 @@ if (isset($_POST['signUpFrom'])) {
 }
 
 if (isset($_POST['signUpFrom'], $_POST['accept_decline'])) {
+    require_once("connect.php");
+    require("mail.php");
     $organizer = $conn->real_escape_string(strip_tags($_POST['organizer']));
     $businessid = $conn->real_escape_string(strip_tags($_POST['businessid']));
     $phone = $conn->real_escape_string(strip_tags($_POST['phone']));
     $email = $conn->real_escape_string(strip_tags($_POST['email']));
-    
     $salt = bin2hex(random_bytes(16));
     $rawPassword = $_POST['password1'];
     $preparedPassword = $salt . $rawPassword;
     $hashedPassword = password_hash($preparedPassword, PASSWORD_BCRYPT);
-
     $query = "INSERT INTO users (organizer, businessid, phone, email, password, salt)
             VALUES ('$organizer', '$businessid', '$phone', '$email', '$hashedPassword', '$salt')";
 
@@ -108,6 +103,7 @@ if (isset($_POST['signUpFrom'], $_POST['accept_decline'])) {
     }
 
 if (isset($_POST['verify_signup'])) {
+    require_once("connect.php");
     $signup_token = $_POST['signup_token'];
     $email = $_POST['email'];
     $query = "SELECT * FROM signup_tokens WHERE signup_token='$signup_token' AND signup_email='$email' AND status='inactive' AND expiration_time > NOW()";
@@ -131,6 +127,7 @@ if (isset($_POST['verify_signup'])) {
 }
 
 if (isset($_POST['login'])) {
+    require_once("connect.php");
     $email = $_POST['login_email'];
     $password = $_POST['login_password'];
     $query = "SELECT * FROM users WHERE email='$email'";
@@ -159,7 +156,4 @@ if (isset($_POST['login'])) {
     }
     $conn->close();
 }
-
-
-
 ?>
