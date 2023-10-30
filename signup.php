@@ -1,10 +1,4 @@
 <?php
-include "header.php";
-include_once "handler.php";
-$active = basename($_SERVER['PHP_SELF'], ".php");
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
 session_start();
 if (isset($_SESSION['errors'])) {
     $errors = $_SESSION['errors'];
@@ -12,6 +6,13 @@ if (isset($_SESSION['errors'])) {
 } else {
     $errors = [];
 }
+include "header.php";
+include_once "handler.php";
+$active = basename($_SERVER['PHP_SELF'], ".php");
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+
 ?>
 <nav class="navbar bg-body-tertiary">
   <div class="container-fluid">
