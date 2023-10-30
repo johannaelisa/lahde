@@ -6,7 +6,9 @@ ini_set('display_errors', 1);
 
 session_start();
 $user_id = $_SESSION['user_id'];
+echo $user_id;
 $organizer = $_SESSION['organizer'];
+echo $organizer;
 $role = $_SESSION['role'];
 ?>
 
