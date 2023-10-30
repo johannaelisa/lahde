@@ -6,7 +6,7 @@ if (isset($_POST['signUpFrom'])) {
     $fields_to_check = ["organizer", "businessid", "phone", "email", "password1", "password2", "accept_decline" ];
     $errors = [];
     foreach ($fields_to_check as $field) {
-        session_start();
+        #session_start();
         $value = isset($_POST[$field]) ? $_POST[$field] : '';
         $cleanedValue = trim($value);
         switch ($field) {  
