@@ -139,7 +139,7 @@ if (isset($_POST['login'])) {
         $preparedPassword = $salt . $password;
         if (password_verify($preparedPassword, $hashedPassword)) {
             #session_start();
-            $_SESSION['user_id'] = $row['user_id'];
+            $_SESSION['user_id'] = $row['ID'];
             $_SESSION['organizer'] = $row['organizer'];
             $_SESSION['role'] = $row['role'];
             if (isset($_POST['remember_me'])) {
