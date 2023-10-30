@@ -4,10 +4,9 @@ $active = basename($_SERVER['PHP_SELF'], ".php");
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-session_start();
-$user_id = $_SESSION['user_id'];
-$organizer = $_SESSION['organizer'];
-$role = $_SESSION['role'];
+#$user_id = $_SESSION['user_id'];
+#$organizer = $_SESSION['organizer'];
+#$role = $_SESSION['role'];
 ?>
 
 <nav class="navbar bg-body-tertiary">
