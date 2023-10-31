@@ -8,7 +8,7 @@ ini_set('display_errors', 1); //tähän ini_set('display_errors', 0), kun Azures
 <nav class="navbar bg-body-tertiary">
   <div class="container-fluid">
     <a class="navbar-brand" href="index.php">
-      <img src="kuvat/lahde.webp" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+      <img src="https://lahde.s3.eu-north-1.amazonaws.com/lahde.webp?response-content-disposition=inline&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEL%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCmV1L-5vcnRoLTEiRzBFAiEAzdyxegeQNTqtI4Mzmf1pmJDeXHYFMRUWdnXJpVMxeEACIG5rj%2FCYFrtQmuapggAoZt32PMaXzcSQdetuv7Wu2F6wKu0CCOn%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMNDgyNDAzNzk3MDQwIgxw4z376CYyrr2gsk0qwQJOhxx%2FN3Vywribtv8zBPqIZD8MNftnblhMWlN%2FPg6ilCS1IiXNUse6OQLYy1SznOPcC1GqQaasAWXTdxURAxcZLGcK%2FmQQ5P4OxjXL81xTV2JgkENxAM48yt3cLS1BHLDYIprlJFBUMUowzDrkjGN6XB0k1kXWbCewyPeqNsolGYaisdH8U8WmyVCBa8UVG8A55JWCiuNTi2T%2FKEKiTFL%2BdOketF%2BrlkfTPYoKD9r6gc%2BTYbuuc4wukrxSj79zhhAmtmsUpY42xelZSnpRFEH84dZdGzU43qjxYy0lj6Lzu5uOEf1RiD1xWFuIaFR7ub2UJ73RtYP2yexsIHpyFFHvgAIDcO8LNvI9bWOXfmnsx4%2B%2B8wC5W2RPEqKpjqTnpPuxOb82IjLhYhGfI%2BAAxf7kDbJw7eYNzilLgqpCpMTWpJ0w09iCqgY6swIvfC%2BMzvRDq5KwmxhJwUZsosLsYPC5Mh0sZIrVZTQb4sl2Y2Ccam8ChZdPso3wywAS9rZ8iN4WN5wWHKZG%2FrWZTmc3%2BJ2XB8%2BbXlKEI6RjRq%2BmnrIwk0udHjeWb%2BzBRwHxsftW3wlv1Me%2FjBiSxXMci4nnj6EYjIN7lukxOlQQspMUCcswcmSDsAQOWlybABepLWadjYyraVRQi0GRxMJeR2DnQhNqRwfQn3QENPCeBxcYjSd%2FYsY%2BI34T3Oqcxlg%2BwdQn5O%2BotHEYSA7MT5UPUpv5jbcxK15uRDFMoXb9Hpe2eH%2FlFoq2R4Tms7LvroP2HnPXKLoJ8MkBhVvO5urqlKQeaMYudCRp4%2Fs8sf9HILLu4%2BeY%2F51Mr%2Feij0X2erJzZmpdQFyKasFpSS3OvKBMbbM8&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20231031T083809Z&X-Amz-SignedHeaders=host&X-Amz-Expires=300&X-Amz-Credential=ASIAXAUMBZAYNNNETQGI%2F20231031%2Feu-north-1%2Fs3%2Faws4_request&X-Amz-Signature=14568379c74baed595c93fa4d6730913f07ae2844762d9b3666283a4da40d15a" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
       LÄHDE
     </a>
     <div class="right-menu ml-auto">
@@ -167,7 +167,6 @@ $(document).ready(function() {
             var formattedEventDate = eventDate.slice(8, 10) + '.' + eventDate.slice(5, 7) + '.' + eventDate.slice(0, 4);
         }
 
-
         var eventType = event.primary_category;
         
         var keywordTranslations = {
@@ -188,8 +187,12 @@ $(document).ready(function() {
         });
         eventKeywords = translatedKeywords.join(', ');
         var eventDescription = event.description;
-
-        var imagePath = 'kuvat/' + eventType + '.webp';
+        include_once "images.js";
+        var imagePath = imageUrl[eventType];
+        if (imagePath === undefined) {
+          imagePath = 'https://lahde.s3.eu-north-1.amazonaws.com/lahde2.webp?response-content-disposition=inline&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEL%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCmV1LW5vcnRoLTEiRzBFAiEAzdyxegeQNTqtI4Mzmf1pmJDeXHYFMRUWdnXJpVMxeEACIG5rj%2FCYFrtQmuapggAoZt32PMaXzcSQdetuv7Wu2F6wKu0CCOn%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMNDgyNDAzNzk3MDQwIgxw4z376CYyrr2gsk0qwQJOhxx%2FN3Vywribtv8zBPqIZD8MNftnblhMWlN%2FPg6ilCS1IiXNUse6OQLYy1SznOPcC1GqQaasAWXTdxURAxcZLGcK%2FmQQ5P4OxjXL81xTV2JgkENxAM48yt3cLS1BHLDYIprlJFBUMUowzDrkjGN6XB0k1kXWbCewyPeqNsolGYaisdH8U8WmyVCBa8UVG8A55JWCiuNTi2T%2FKEKiTFL%2BdOketF%2BrlkfTPYoKD9r6gc%2BTYbuuc4wukrxSj79zhhAmtmsUpY42xelZSnpRFEH84dZdGzU43qjxYy0lj6Lzu5uOEf1RiD1xWFuIaFR7ub2UJ73RtYP2yexsIHpyFFHvgAIDcO8LNvI9bWOXfmnsx4%2B%2B8wC5W2RPEqKpjqTnpPuxOb82IjLhYhGfI%2BAAxf7kDbJw7eYNzilLgqpCpMTWpJ0w09iCqgY6swIvfC%2BMzvRDq5KwmxhJwUZsosLsYPC5Mh0sZIrVZTQb4sl2Y2Ccam8ChZdPso3wywAS9rZ8iN4WN5wWHKZG%2FrWZTmc3%2BJ2XB8%2BbXlKEI6RjRq%2BmnrIwk0udHjeWb%2BzBRwHxsftW3wlv1Me%2FjBiSxXMci4nnj6EYjIN7lukxOlQQspMUCcswcmSDsAQOWlybABepLWadjYyraVRQi0GRxMJeR2DnQhNqRwfQn3QENPCeBxcYjSd%2FYsY%2BI34T3Oqcxlg%2BwdQn5O%2BotHEYSA7MT5UPUpv5jbcxK15uRDFMoXb9Hpe2eH%2FlFoq2R4Tms7LvroP2HnPXKLoJ8MkBhVvO5urqlKQeaMYudCRp4%2Fs8sf9HILLu4%2BeY%2F51Mr%2Feij0X2erJzZmpdQFyKasFpSS3OvKBMbbM8&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20231031T083812Z&X-Amz-SignedHeaders=host&X-Amz-Expires=300&X-Amz-Credential=ASIAXAUMBZAYNNNETQGI%2F20231031%2Feu-north-1%2Fs3%2Faws4_request&X-Amz-Signature=ba71e868d6c0204a3e191ccd5c1dbc01493473d5995f1af2b9fa3719696724b2';
+        }
+        //var imagePath = 'kuvat/' + eventType + '.webp';
         var formattedEventTime = eventTime.slice(0, 5);
         
         var eventCard = $('<div class="card mb-3" id="mainEventCard"">');
