@@ -8,7 +8,7 @@ ini_set('display_errors', 0); //tähän ini_set('display_errors', 0), kun Azures
 <nav class="navbar bg-body-tertiary">
   <div class="container-fluid">
     <a class="navbar-brand" href="index.php">
-    <img src="" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+    <img src="kuvat/lahde.webp" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
       LÄHDE
     </a>
     <div class="right-menu ml-auto">
