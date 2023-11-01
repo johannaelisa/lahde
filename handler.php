@@ -158,10 +158,10 @@ if (isset($_POST['login'])) {
             }
             header("Location: memberpage.php");
         } else {
-            echo "Kirjautuminen epäonnistui.";
+            header("Location: login.php");
         }
     } else {
-        echo "Kirjautuminen epäonnistui.";
+        header("Location: login.php");
     }
     $conn->close();
 }
