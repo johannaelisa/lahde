@@ -142,13 +142,19 @@ if (isset($_POST['login'])) {
         $preparedPassword = $salt . $password;
         if (password_verify($preparedPassword, $hashedPassword)) {
             session_start();
+            session_regenerate_id(); 
             $_SESSION['user_id'] = $id;
             $_SESSION['organizer'] = $organizer;
             $_SESSION['role'] = $role;
             if (isset($_POST['remember_me'])) {
                 $remember_token = bin2hex(random_bytes(32));
-                $query2 = "INSERT INTO remember_tokens (user_id, token) VALUES (?, ?)";
+                date_default_timezone_set('Europe/Helsinki');
+                $expiration_time = date("Y-m-d H:i:s", strtotime("+30 days")); 
+                $query2 = "INSERT INTO remember_tokens (user_id, token, expiration_time) VALUES (?, ?, ?)";
                 $stmt = $conn->prepare($query2);
+                $stmt->bind_param("iss", $user_id, $remember_token, $expiration_time);
+                $stmt->execute();
+                $stmt->close();
             }
             header("Location: memberpage.php");
         } else {
