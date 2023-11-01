@@ -16,17 +16,12 @@ ini_set('display_errors', 1);
 
 <div class="container">
     <div class="hero" href="index.php">
-        <p><b>OLET OSA LÄHDETTÄ</b>Viimeistele rekisteröinti vahvistamalla sähköpostiosoitteesi </p>
+        <h6>OLET OSA LÄHDETTÄ. Viimeistele rekisteröinti vahvistamalla sähköpostiosoitteesi </h6>
         <div class="toast align-items-center text-bg-primary border-0" role="alert" aria-live="assertive" aria-atomic="true">
-       <div class="">
-        
-       </div>
         </div>
         <div class="hero_overlay"></div>
         <img src="kuvat/learn.webp" alt="Lähde">
     </div>
-
-        <p>Viimeistele rekisteröinti vahvistamalla sähköpostiosoitteesi </p>
     </div>
 </body>
 </html>
