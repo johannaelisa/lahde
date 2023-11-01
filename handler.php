@@ -152,7 +152,7 @@ if (isset($_POST['login'])) {
                 $expiration_time = date("Y-m-d H:i:s", strtotime("+30 days")); 
                 $query2 = "INSERT INTO remember_tokens (user_id, token, expiration_time) VALUES (?, ?, ?)";
                 $stmt = $conn->prepare($query2);
-                $stmt->bind_param("iss", $user_id, $remember_token, $expiration_time);
+                $stmt->bind_param("iss", $id, $remember_token, $expiration_time);
                 $stmt->execute();
                 $stmt->close();
             }
