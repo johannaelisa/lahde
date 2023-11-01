@@ -17,11 +17,15 @@ ini_set('display_errors', 1);
 <nav class="navbar bg-body-tertiary">
   <div class="container-fluid">
     <a class="navbar-brand" href="index.php">
-      <img src="kuvat/lahde.webp" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+    <img src="kuvat/lahde.webp" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
       LÄHDE
     </a>
+    <div class="right-menu ml-auto">
+      <a class="nav-link" href="login.php">Omat tapahtumat</a>
+    </div>
   </div>
 </nav>
+
 <div class="container">
 <div class="signup_container">
     <div class="form_content">

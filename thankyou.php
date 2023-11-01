@@ -16,10 +16,10 @@ ini_set('display_errors', 1);
 
 <div class="container">
     <div class="hero" href="index.php">
-        <h3>OLET OSA LÄHDETTÄ</h3>
+        <p><b>OLET OSA LÄHDETTÄ</b>Viimeistele rekisteröinti vahvistamalla sähköpostiosoitteesi </p>
         <div class="toast align-items-center text-bg-primary border-0" role="alert" aria-live="assertive" aria-atomic="true">
        <div class="">
-        <p>Viimeistele rekisteröinti vahvistamalla sähköpostiosoitteesi </p>
+        
        </div>
         </div>
         <div class="hero_overlay"></div>
