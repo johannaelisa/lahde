@@ -48,7 +48,7 @@ ini_set('display_errors', 0);
 
       <!-- Päivämäärä ja aika-->
       <div class="row">
-      <h6>Tapahtuman perustiedot</h6>
+      <h6>Päivämäärä ja alkamisaika</h6>
       <div class="col-4">
         <select class="form-select mb-3" aria-label="Default select example" name="dateSelect" id="dateSelect"></select>
       </div>
