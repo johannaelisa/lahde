@@ -26,7 +26,7 @@
     .container .row #myEventList {
         margin: 0;
         padding: 0;
-        background-color: #C5C5BF!important;
+        background-color: #E3D5CA !important;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
     
@@ -60,7 +60,7 @@
     }
 
     .container .row #myEventList {
-        background-color: #C5C5BF!important;
+        background-color: #E3D5CA !important;
         width: 100% !important;
     }
 
