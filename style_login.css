@@ -1,75 +1,100 @@
-.login_container {
+.container-login {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+}
+
+.container-background {
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 100vh;
-  padding-top: 60px;
-  padding-bottom: 50px;
+  width: 100vw;
+  padding: min(10px, 100px);
   background-image: url('kuvat/act.webp');   
   background-size: cover;
   background-repeat: no-repeat;
   z-index: 2;
 }
 
-.login_container .form_content {
+.container-background .form_content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: min(10px, 100px);
-  padding-top: 40px;
+  width: 100%;
+  margin-top: 10%;
+  padding: min(20px, 500px);
   border-radius: 7px;
   background-color: #CFB63A;
 }
 
-.login_container .form_content .sm-6 {
-  padding: 40px;
+.container-background .form_content .md-12 {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
 }
 
-.login_container .form_content .link-secondary {
+.container-background .form_content .col-12 {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 10px;
+  width: 100%;
+}
+
+.container-background .form_content .link-secondary {
   color: black !important;
-  
 }
 
 @media (min-width: 576px) {
-    .login_container .form_content .sm-6  {
-      padding-left: 50px;
-      padding-right: 50px;
-    }
+  .container-login {
+    padding: 0 20px 0 20px;
+  }
+  .container-background {
+    max-width: 80%;
   }
 
-  @media (min-width: 768px) {
-    .login_container .form_content .sm-6  {
-      padding-left: 70px;
-      padding-right: 70px;
-    }
+  .container-background .form_content {
+    max-width: 500px;
   }
 
-  @media (min-width: 992px) {
-    .login_container .form_content .sm-6  {
-      padding-left: 100px;
-      padding-right: 100px;
-    }
+  .container-background .form_content .md-12  {
+    display: flex;
+    flex-direction: column;
+    padding-left: 70px;
+    padding-right: 70px;
   }
+}
 
-.col-g-3 {
-    padding-top: 20px;
+@media (min-width: 768px) {
+  .container-background .form_content .md-12  {
+    display: flex;
+    flex-direction: column;
+    padding-left: 70px;
+    padding-right: 70px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container-background .form_content .md-12  {
+    display: flex;
+    flex-direction: column;
+    padding-left: 100px;
+    padding-right: 100px;
+  }
 }
 
 .alert-danger {
-    color: #721c24; /* Punainen tekstin väri */
-    background-color: #f8d7da; /* Punainen taustaväri */
-    border: 1px solid #f5c6cb; /* Punainen reunus */
-    border-radius: 4px; /* Pyöristä kulmat */
-    padding: 10px; /* Lisää tilaa virheilmoituksen ympärille */
-    margin-bottom: 15px; /* Lisää tilaa virheilmoituksen ja seuraavan kentän väliin */
+    color: #721c24;
+    background-color: #f8d7da; 
+    border: 1px solid #f5c6cb; 
+    border-radius: 4px; 
+    padding: 10px; 
+    margin-bottom: 15px; 
 }
 
-button {
-    padding: 10px;
-    border-radius: 3px;
-    border-color: #cdb332;
-    background-color: white;
-    border-radius: 5px !important;
-}
+
 
   

@@ -23,11 +23,6 @@ function posti($emailTo,$msg,$subject){
     $mail->CharSet = 'UTF-8';
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->msgHTML($msg);
-
-    if ($mail->send()) {
-        echo 'Sähköposti lähetetty onnistuneesti';
-    } else {
-        echo 'Sähköpostin lähetys epäonnistui: ' . $mail->ErrorInfo;
-    }
+    
 }
 ?>

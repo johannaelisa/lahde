@@ -94,7 +94,11 @@ if (isset($_POST['signUpFrom'], $_POST['accept_decline'])) {
             $msg.= "<a href='$confirmationLink'>$confirmationLink</a>";
             $subject = "Vahvista sähköpostiosoitteesi";
             posti($emailTo,$msg,$subject);
-            header("Location: thankyou.php");
+            if ($mail->send()) {
+                header("Location: thankyou.php");
+            } else {
+                echo 'Sähköpostin lähetys epäonnistui: ' . $mail->ErrorInfo;
+            }
         } else {
             echo "Tietojen tallentaminen epäonnistui.";
             }

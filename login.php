@@ -13,11 +13,11 @@ ini_set('display_errors', 1);
   </div>
 </nav>
 
-<div class="container">
-<div class="login_container">
+<div class="container-login">
+<div class="container-background">
     <div class="form_content">
     <h3>KIRJAUDU</h3>
-    <form action="handler.php" method="post" class="sm-6" novalidate>
+    <form action="handler.php" method="post" class="md-12" novalidate>
     <div class="col-12">
         <label for="login_email" class="form-label">Sähköposti</label>
         <input type="email" id="login_email" name="login_email" class="form-control" autofocus>

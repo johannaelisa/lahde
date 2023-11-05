@@ -11,6 +11,7 @@
   <script src="https://kit.fontawesome.com/87283090d5.js" crossorigin="anonymous"></script>
   <script src="navbar.js"></script>
   <script src="signup_validation.js"></script>
+  <!--<link rel="stylesheet" type="text/css" href="reset.css">-->
   <link rel="stylesheet" type="text/css" href="style_main.css">
   <link rel="stylesheet" type="text/css" href="style_button.css">
   <link rel="stylesheet" type="text/css" href="style_checkbox.css">

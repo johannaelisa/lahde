@@ -17,12 +17,12 @@ ini_set('display_errors', 0); //tähän ini_set('display_errors', 0), kun Azures
   </div>
 </nav>
 
-<div class="container mt-0">
+<div class="container mt-0" id="container-event">
   <div class="btn-group d-flex flex-wrap" id="button-group" role="group" aria-label="Button group">
     <button class="btn btn-dark me-2 mb-2 rounded active" type="button" id="button_today" value="button_today">Tänään</button>
     <button class="btn btn-dark me-2 mb-2 rounded" type="button" id="button_tomorrow" value="button_tomorrow" >Huomenna</button>
     <button class="btn btn-dark me-2 mb-2 rounded" type="button" id="button_weekend" value="button_weekend" >Viikonloppuna</button>
-    <button class="btn btn-dark me-2 mb-2 rounded" type="button" id="button_all"  value="button_all" >Kaikki päivät</button>
+    <button class="btn btn-dark me-2 mb-2 rounded"  type="button" id="button_all"  value="button_all" >Kaikki päivät</button>
   </div>
   
   <div class="checkbox-container">
